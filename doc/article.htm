@@ -1,0 +1,130 @@
+<h1>today Plugins with compact framework</h1>
+The following today or home screen plugins for Windows Mobile are based on a work of CrisText at codeplex [https://managedtodayscreen.codeplex.com/wikipage?title=Development%20Guide&referringTitle=Home].
+<p>
+The codeplex sources provide a framework to create home screen plugins very easily.
+<p>
+You just start a Form or UserControl and add the attribute "[TodayScreenItem("a unique name")]" before the class. Further on, the framework looks for such plugins dynamically and you can add or remove plugins by just adding or removing DLLs.
+<p>
+I did two plugins, one shows the Intermec device ID and the other enables you to have buttons on the home screen to directly launch applications.
+<p>
+The first plugin is very simple. A usercontrol that just shows some static text:
+<p>
+<pre>
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Text;
+using System.Windows.Forms;
+
+using ChrisTec.WindowsMobile.TodayScreen;
+
+namespace todayDeviceID
+{
+    [TodayScreenItem("todayScreenDeviceID")]
+    public partial class todayDeviceID : UserControl
+    {
+        private Label label1;
+        private PictureBox pictureBox1;
+    
+        public todayDeviceID()
+        {
+            InitializeComponent();
+            int w = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width;
+            int h = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height;
+            int factor = w / this.Width;
+            this.Width = w;
+            this.Height = this.Height * factor;
+            
+            this.pictureBox1.Height = this.Height - (pictureBox1.Top*2);
+            pictureBox1.Width = pictureBox1.Height;    //make a square box
+
+            label1.Width = this.Width - pictureBox1.Width;
+            label1.Height = this.Height;
+
+            label1.Text = ITC_DeviceID.getDeviceID();
+        }
+		...
+</pre>
+<p>
+The above simply has a label and a picturebox on a usercontrol.
+<p>
+To get the above working on your device you must install the ChrisTec.WindowsMobile.TodayScreen cab file or at least the files:<br>
+ManagedTodayScreenItem.dll<br>
+ManagedTodayScreenItemHost.exe
+<p>
+And you must register the today plugin framework:
+<pre>
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Today\Items\Managed Items]
+"DLL"="%CE1%\\Managed Today Screen Framework\\ManagedTodayScreenItem.dll"
+"Enabled"=dword:00000001
+"Options"=dword:00000000
+"Selectability"=dword:00000002
+"Type"=dword:00000004
+</pre>
+<p>
+All files should be placed inside "\Program Files\Managed Today Screen Framework\".
+<p>
+You should setup your plugins to be deployed to the above directory.
+<p>
+Then test your plugin by Start-Settings-Home:Items and enabling "Managed Items". If everything is correct, you will see your plugin on the home screen:
+<p>
+The other plugin I wrote is a program launcher. I started another Control Library SmartDevice project. Just add the attribute to let the framework know that this is another plugin:
+<pre>
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Text;
+using System.Windows.Forms;
+using System.Runtime;
+
+using ChrisTec.WindowsMobile.TodayScreen;
+
+namespace todayApp1
+{
+    [TodayScreenItem("todayScreenApps1")]
+    public partial class todayApp1 : UserControl
+    {
+        theApps apps = new theApps();
+        myApps.myApp[] allApps;
+
+        public todayApp1()
+        {
+            InitializeComponent();
+            allApps = apps.myAppList.ToArray();
+			...
+</pre>
+
+The above uses a class to determine the application buttons to create. This theApps class uses a xml file to let you define launcher buttons:
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;myApps&gt;
+	&lt;myApp&gt;
+    &lt;title&gt;The File Explorer&lt;/title&gt;
+		&lt;iconFile&gt;\Program Files\managed today screen framework\fexplore.gif&lt;/iconFile&gt;
+		&lt;exeFile&gt;\Windows\fexplore.exe&lt;/exeFile&gt;
+		&lt;args&gt;\My Documents&lt;/args&gt;
+	&lt;/myApp&gt;
+	&lt;myApp&gt;
+    &lt;title&gt;Internet Explorer&lt;/title&gt;
+		&lt;iconFile&gt;\Program Files\managed today screen framework\iexplore.gif&lt;/iconFile&gt;
+		&lt;exeFile&gt;\Windows\iexplore.exe&lt;/exeFile&gt;
+		&lt;args&gt;www.google.de&lt;/args&gt;
+	&lt;/myApp&gt;
+&lt;/myApps&gt;
+&lt;/pre&gt;
+<p>
+You can see that you can define the exe to start, arguments for the exe, a title and a symbol.
+<p>
+The todayApp user control adds buttons dynamically and will show a scroll bar if more than 4 apps are defined.
+<p>
+Now start your own home screen plugin the easy way.
+<p>
+Source code at: https://github.com/hjgode/todayPlugins

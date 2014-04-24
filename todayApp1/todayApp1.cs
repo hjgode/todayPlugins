@@ -12,7 +12,7 @@ using ChrisTec.WindowsMobile.TodayScreen;
 
 namespace todayApp1
 {
-    [TodayScreenItem("todayScreenDeviceID")]
+    [TodayScreenItem("todayScreenApps1")]
     public partial class todayApp1 : UserControl
     {
         theApps apps = new theApps();
