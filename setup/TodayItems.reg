@@ -1,0 +1,8 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Today\Items\Managed Items]
+"DLL"="%CE1%\\Managed Today Screen Framework\\ManagedTodayScreenItem.dll"
+"Enabled"=dword:00000001
+"Options"=dword:00000000
+"Selectability"=dword:00000002
+"Type"=dword:00000004

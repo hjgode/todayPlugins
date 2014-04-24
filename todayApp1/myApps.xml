@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<myApps>
+	<myApp>
+    <title>The File Explorer</title>
+		<iconFile>\Program Files\managed today screen framework\fexplore.gif</iconFile>
+		<exeFile>\Windows\fexplore.exe</exeFile>
+		<args>\My Documents</args>
+	</myApp>
+	<myApp>
+    <title>Internet Explorer</title>
+    <iconFile>\Program Files\managed today screen framework\iexplore.gif</iconFile>
+		<exeFile>\Windows\iexplore.exe</exeFile>
+		<args>www.google.de</args>
+	</myApp>
+	<myApp>
+    <title>3. The File Explorer</title>
+		<iconFile>\Program Files\managed today screen framework\fexplore1.gif</iconFile>
+		<exeFile>\Windows\fexplore.exe</exeFile>
+		<args>\My Documents</args>
+	</myApp>
+	<myApp>
+    <title>4. Internet Explorer</title>
+    <iconFile>\Program Files\managed today screen framework\iexplore.gif</iconFile>
+		<exeFile>\Windows\iexplore.exe</exeFile>
+		<args>www.google.de</args>
+	</myApp>
+	<myApp>
+    <title>5. Internet Explorer</title>
+    <iconFile>\Program Files\managed today screen framework\iexplore.gif</iconFile>
+		<exeFile>\Windows\iexplore.exe</exeFile>
+		<args>www.google.de</args>
+	</myApp>
+</myApps>
