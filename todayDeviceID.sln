@@ -15,6 +15,8 @@ Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "setupToday", "setupToday\se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "todayDeviceID", "todayDeviceID\todayDeviceID.csproj", "{EDFEC02C-B2C7-4A47-AB3A-5776AAD73053}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunkSelect", "FunkSelect\FunkSelect.csproj", "{5813B92D-C378-424C-8AA0-42B5D7749709}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,6 +145,20 @@ Global
 		{EDFEC02C-B2C7-4A47-AB3A-5776AAD73053}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|Any CPU
 		{EDFEC02C-B2C7-4A47-AB3A-5776AAD73053}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release|Any CPU
 		{EDFEC02C-B2C7-4A47-AB3A-5776AAD73053}.Release|Windows Mobile 6 Professional SDK (ARMV4I).ActiveCfg = Release|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Debug|Pocket PC 2003 (ARMV4).ActiveCfg = Debug|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Debug|Windows Mobile 6 Professional SDK (ARMV4I).ActiveCfg = Debug|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release|Any CPU
+		{5813B92D-C378-424C-8AA0-42B5D7749709}.Release|Windows Mobile 6 Professional SDK (ARMV4I).ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
